@@ -46,7 +46,7 @@ int main(int argc, const char* argv[]){
 	int ticksToMove = round(metersToTicks(1));
 	//print("%d",ticksToMove);
 	
-	//initialStartPosition();
+	initialStartPosition();
 /*
 	#ifdef BUILDING_IN_SIMULATOR
 		simulator_startNewSmokeTrail();
@@ -70,7 +70,7 @@ int main(int argc, const char* argv[]){
 	}
 	*/
 	drive_goto(-100,-100);
-	
+	showTicks(0);
 	simulator_startNewSmokeTrail();
 	
 	drive_goto(ticksToMove,ticksToMove);
@@ -84,7 +84,7 @@ int main(int argc, const char* argv[]){
 	simulator_startNewSmokeTrail();
 
 	drive_goto(ticksToMove,ticksToMove);
-	showTicks(100);
+	showTicks(0);
 
 
 
