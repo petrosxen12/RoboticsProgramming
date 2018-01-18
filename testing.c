@@ -28,20 +28,27 @@ int metersToTicks(int meters){
 	return mmToTicks;
 }
 
+void initialStartPosition(){
+	int offsetValHoriz = -160;
+	int offsetValVert = 100;
+
+	drive_speed(3,3);
+	drive_goto(offsetValHoriz,offsetValHoriz);
+	drive_goto(51,0); //90 degrees right
+	drive_goto(offsetValVert,offsetValVert); //30 ticks down
+	drive_goto(-51,0);
+	showTicks(0);
+}
+
 int main(int argc, const char* argv[]){	
-	int offsetVal = -120;
+	
+	initialStartPosition();
 	int ticksToMove = metersToTicks(1);
 
 	#ifdef BUILDING_IN_SIMULATOR
 	//simulator_startNewSmokeTrail();
 	#endif
 
-	drive_goto(offsetVal,offsetVal); //Initial offset so robot can have space
-	drive_speed(1,1);
-	drive_goto(20,20);
-	//drive_goto(-51,0);
-	//drive_goto(102,0);
-	
 	for (int i = 0; i < 4; ++i){
 	drive_speed(1,1);
 	drive_goto(ticksToMove,ticksToMove); //Drive one meter 
@@ -52,7 +59,7 @@ int main(int argc, const char* argv[]){
 		//simulator_stopNewSmokeTrail();
 	#endif
 
-	showTicks(abs(offsetVal));
+	//showTicks(abs(offsetVal));
 }
 
 
