@@ -87,6 +87,7 @@ int main(int argc, const char* argv[]){
 	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
 	makeTurnLeftNR();
+	drive_goto(-1,0); //Attempt to eliminate offset of top line.
 	
 	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
@@ -94,7 +95,7 @@ int main(int argc, const char* argv[]){
 
 	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
-	
+
 	showTicks(0);
 
 	//showTicks(abs(offsetVal));
