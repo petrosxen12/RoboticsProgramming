@@ -17,7 +17,7 @@
 #endif
 
 
-void makeTurnRightNR();
+void makeTurnLeftNR();
 
 static void showTicks(int calibration){
 	int left, right;
@@ -74,24 +74,33 @@ int main(int argc, const char* argv[]){
 	}
 	*/
 	//drive_goto(-100,-100);
-	showTicks(0);
-	simulator_startNewSmokeTrail();
 	
+	showTicks(0);
+	//simulator_startNewSmokeTrail();
+	
+
+	//Using no loop.
+	simulator_startNewSmokeTrail();
+	drive_goto(ticksToMove,ticksToMove);
+	makeTurnLeftNR();
+	
+	simulator_startNewSmokeTrail();
+	drive_goto(ticksToMove,ticksToMove);
+	makeTurnLeftNR();
+	
+	simulator_startNewSmokeTrail();
+	drive_goto(ticksToMove,ticksToMove);
+	makeTurnLeftNR();
+
+	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
 	
-	makeTurnRightNR();
-	
-	simulator_startNewSmokeTrail();
-
-	drive_goto(ticksToMove,ticksToMove);
 	showTicks(0);
-
-
 
 	//showTicks(abs(offsetVal));
 }
 
-void makeTurnRightNR()
+void makeTurnLeftNR()
 	{
 		drive_goto(11,11);
 		drive_goto(-11,-11);
