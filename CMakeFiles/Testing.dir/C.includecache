@@ -23,6 +23,8 @@ simpletools.h
 /Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client/applications/Task1/simpletools.h
 ping.h
 /Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client/applications/Task1/ping.h
+simulator.h
+/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client/applications/Task1/simulator.h
 
 include/abdrive.h
 simpletools.h
@@ -103,6 +105,8 @@ math.h
 -
 simplei2c.h
 include/simplei2c.h
+
+include/simulator.h
 
 include/sys/driver.h
 

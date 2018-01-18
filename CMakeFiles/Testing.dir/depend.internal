@@ -13,5 +13,6 @@ applications/Task1/CMakeFiles/Testing.dir/testing.c.o
  include/simplei2c.h
  include/simpletext.h
  include/simpletools.h
+ include/simulator.h
  include/sys/driver.h
  include/sys/sd.h
