@@ -24,16 +24,19 @@ int metersToTicks(int meters){
   return mmToTicks;
 }
 
-
 int main(int argc, const char* argv[])
 {	
 	int offsetVal = -120;
-	//Start
+	
+	int ticksToMove = metersToTicks(1);
+
+	drive_speed(-1,1);
 	drive_goto(offsetVal,offsetVal); //Offset 
-   drive_goto(307,307); //Drive one meter 
+   	drive_goto(ticksToMove,ticksToMove); //Drive one meter 
 
    //Turn 90 Degrees
    drive_goto(51,0);
    showTicks(abs(offsetVal));
 }
+
 
