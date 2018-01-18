@@ -16,6 +16,9 @@
 #include "simulator.h"
 #endif
 
+
+void makeTurnRightNR();
+
 static void showTicks(int calibration){
 	int left, right;
 	drive_getTicks(&left, &right);
@@ -43,6 +46,7 @@ void initialStartPosition(){
 
 int main(int argc, const char* argv[]){	
 
+	//simulator_showRobotConfiguration();
 	int ticksToMove = round(metersToTicks(1));
 	//print("%d",ticksToMove);
 	
@@ -69,18 +73,14 @@ int main(int argc, const char* argv[]){
 	#endif
 	}
 	*/
-	drive_goto(-100,-100);
+	//drive_goto(-100,-100);
 	showTicks(0);
 	simulator_startNewSmokeTrail();
 	
 	drive_goto(ticksToMove,ticksToMove);
-	drive_goto(11,11);
-	drive_goto(-11,-11);
 	
-	simulator_stopSmokeTrail();
-
-	drive_goto(-26,25);
-	drive_goto(9,9);
+	makeTurnRightNR();
+	
 	simulator_startNewSmokeTrail();
 
 	drive_goto(ticksToMove,ticksToMove);
@@ -91,4 +91,13 @@ int main(int argc, const char* argv[]){
 	//showTicks(abs(offsetVal));
 }
 
-
+void makeTurnRightNR()
+	{
+		drive_goto(11,11);
+		drive_goto(-11,-11);
+		
+		simulator_stopSmokeTrail();
+	
+		drive_goto(-26,25);
+		drive_goto(9,9);
+	}
