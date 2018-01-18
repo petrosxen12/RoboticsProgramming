@@ -97,7 +97,6 @@ int main(int argc, const char* argv[]){
 	drive_goto(ticksToMove,ticksToMove);
 
 	showTicks(0);
-
 	//showTicks(abs(offsetVal));
 }
 
