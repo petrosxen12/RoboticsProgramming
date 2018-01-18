@@ -55,12 +55,16 @@ int main(int argc, const char* argv[]){
 	//drive_speed(1,1);
 	drive_goto(ticksToMove,ticksToMove); //Drive one meter 
 	pause(100);
-	drive_goto(-26,25);	
-
 	#ifdef BUILDING_IN_SIMULATOR
-	//simulator_stopNewSmokeTrail();
+  	simulator_stopSmokeTrail();
+  	#endif
+  	pause(100);
+  	drive_goto(-26,25);	
+  	#ifdef BUILDING_IN_SIMULATOR
+		simulator_startNewSmokeTrail();
 	#endif
-	}
+	
+}
 	
 
 	//showTicks(abs(offsetVal));
