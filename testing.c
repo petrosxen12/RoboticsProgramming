@@ -32,7 +32,7 @@ void initialStartPosition(){
 	int offsetValHoriz = -160;
 	int offsetValVert = 100;
 
-	drive_speed(3,3);
+	//drive_speed(3,3);
 	drive_goto(offsetValHoriz,offsetValHoriz);
 	drive_goto(51,0); //90 degrees right
 	drive_goto(offsetValVert,offsetValVert); //30 ticks down
@@ -46,16 +46,16 @@ int main(int argc, const char* argv[]){
 	int ticksToMove = metersToTicks(1);
 
 	#ifdef BUILDING_IN_SIMULATOR
-	//simulator_startNewSmokeTrail();
+		simulator_startNewSmokeTrail();
 	#endif
 
 	for (int i = 0; i < 4; ++i){
-	drive_speed(1,1);
+	//drive_speed(1,1);
 	drive_goto(ticksToMove,ticksToMove); //Drive one meter 
 	drive_goto(-51,0);	
 	}
 
-		#ifdef BUILDING_IN_SIMULATOR
+	#ifdef BUILDING_IN_SIMULATOR
 		//simulator_stopNewSmokeTrail();
 	#endif
 
