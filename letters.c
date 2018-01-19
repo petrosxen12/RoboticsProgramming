@@ -15,26 +15,28 @@
 #ifdef BUILDING_IN_SIMULATOR
 #include "simulator.h"
 #endif
+
 void drawA(){
-	printf("A");
+	print("A");
 }
 void drawE(){
-	printf("E");
+	print("E");
+	print("hi");
 }
 void drawF (){
-	printf("F");
+	print("F");
 }
 void drawH(){
-	printf("H");
+	print("H");
 }
 void drawI(){
-	printf("I");
+	print("I");
 }
 void drawK(){
-	printf("K");
+	print("K");
 }
 void drawL(){
-	printf("L");
+	print("L");
 }
 
 
@@ -49,7 +51,9 @@ int main(int argc, const char* argv[]){
 
 	print("Enter letters (maximum 7):\n");
 	getStr(inputLetters,7);
+
 	int j=0;
+
 	while(inputLetters[j] != 'n'){
 		switch(inputLetters[j]){
 			case 'A':
@@ -79,6 +83,10 @@ int main(int argc, const char* argv[]){
 			case 'L':
 				drawL();
 			break;
+
+		/*	default:
+				print("Enter a word with the following: A,E,F,H,I,K,L");
+			break;*/
 	}
 			j++;
 	}
