@@ -18,10 +18,10 @@
 
 void makeTurnLeftNR()
 {
-		drive_goto(-8,-8);
-		simulator_stopSmokeTrail();
-		drive_goto(-26,25);
-		drive_goto(8,8);
+	drive_goto(-8,-8);
+	simulator_stopSmokeTrail();
+	drive_goto(-26,25);
+	drive_goto(8,8);
 }
 
 void makeTurnRightNR()
@@ -162,7 +162,10 @@ void drawL(){
   simulator_stopSmokeTrail();
 
   //reset starting position
-  drive_goto(60,60);
+	drive_goto(-70,-70);
+	drive_goto(-10,-10);
+  drive_goto(26,-25);
+  drive_goto(68,68);
 }
 
 void drawK(){
@@ -172,13 +175,16 @@ void drawK(){
   simulator_startNewSmokeTrail();
   drive_goto(70,70);
   simulator_stopSmokeTrail();
-  drive_goto(-35,-35);
+  drive_goto(-43,-43);
   drive_goto(13,-13);
   drive_goto(8,8);
   drive_goto(50,50);
   simulator_startNewSmokeTrail();
   drive_goto(-50,-50);
-  makeTurnRightNR();
+	simulator_stopSmokeTrail();
+	drive_goto(-10,-10);
+  drive_goto(26,-25);
+  drive_goto(8,8);
   simulator_startNewSmokeTrail();
   drive_goto(50,50);
   simulator_stopSmokeTrail();
@@ -189,11 +195,21 @@ void drawK(){
   //reset starting position
   drive_goto(20,20);
 }
+void initialStartPosition(){
+	int offsetValHoriz = -180;
+	int offsetValVert = 120;
 
+	drive_goto(offsetValHoriz,offsetValHoriz);
+	drive_goto(26,-25);
+	drive_goto(offsetValVert,offsetValVert); //30 ticks down
+	drive_goto(-26,25);
+}
 
 char inputLetters[8];
 
 int main(int argc, const char* argv[]){	
+
+	initialStartPosition();
 
 	for (int i = 0; i < 8; ++i)
 	{
