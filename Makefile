@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+applications/Task1/CMakeFiles/Square.dir/rule:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f CMakeFiles/Makefile2 applications/Task1/CMakeFiles/Square.dir/rule
+.PHONY : applications/Task1/CMakeFiles/Square.dir/rule
+
+# Convenience name for target.
+Square: applications/Task1/CMakeFiles/Square.dir/rule
+
+.PHONY : Square
+
+# fast build rule for target.
+Square/fast:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Square.dir/build.make applications/Task1/CMakeFiles/Square.dir/build
+.PHONY : Square/fast
+
+# Convenience name for target.
 applications/Task1/CMakeFiles/Letters.dir/rule:
 	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f CMakeFiles/Makefile2 applications/Task1/CMakeFiles/Letters.dir/rule
 .PHONY : applications/Task1/CMakeFiles/Letters.dir/rule
@@ -209,6 +224,33 @@ letters.c.s:
 	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Letters.dir/build.make applications/Task1/CMakeFiles/Letters.dir/letters.c.s
 .PHONY : letters.c.s
 
+square.o: square.c.o
+
+.PHONY : square.o
+
+# target to build an object file
+square.c.o:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Square.dir/build.make applications/Task1/CMakeFiles/Square.dir/square.c.o
+.PHONY : square.c.o
+
+square.i: square.c.i
+
+.PHONY : square.i
+
+# target to preprocess a source file
+square.c.i:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Square.dir/build.make applications/Task1/CMakeFiles/Square.dir/square.c.i
+.PHONY : square.c.i
+
+square.s: square.c.s
+
+.PHONY : square.s
+
+# target to generate assembly for a file
+square.c.s:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Square.dir/build.make applications/Task1/CMakeFiles/Square.dir/square.c.s
+.PHONY : square.c.s
+
 testing.o: testing.c.o
 
 .PHONY : testing.o
@@ -244,6 +286,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... Square"
 	@echo "... Letters"
 	@echo "... Circle"
 	@echo "... Testing"
@@ -253,6 +296,9 @@ help:
 	@echo "... letters.o"
 	@echo "... letters.i"
 	@echo "... letters.s"
+	@echo "... square.o"
+	@echo "... square.i"
+	@echo "... square.s"
 	@echo "... testing.o"
 	@echo "... testing.i"
 	@echo "... testing.s"
