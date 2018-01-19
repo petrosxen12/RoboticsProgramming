@@ -21,7 +21,7 @@ void drawA(){
 }
 void drawE(){
 	print("E");
-	print("hi");
+	//print("hi");
 }
 void drawF (){
 	print("F");
@@ -83,10 +83,6 @@ int main(int argc, const char* argv[]){
 			case 'L':
 				drawL();
 			break;
-
-		/*	default:
-				print("Enter a word with the following: A,E,F,H,I,K,L");
-			break;*/
 	}
 			j++;
 	}
