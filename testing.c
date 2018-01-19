@@ -19,18 +19,21 @@
 
 void makeTurnLeftNR();
 
+//Calibration value added for testing.
 static void showTicks(int calibration){
 	int left, right;
 	drive_getTicks(&left, &right);
 	print("%d %d\n", left+calibration, right+calibration);
 }
 
+//Convert meters to ticks
 int metersToTicks(int meters){
 	int milimeters = meters*1000;
 	int mmToTicks = milimeters/3.25;
 	return mmToTicks;
 }
 
+//Make Space for Robot to travel
 void initialStartPosition(){
 	int offsetValHoriz = -180;
 	int offsetValVert = 120;
@@ -38,42 +41,19 @@ void initialStartPosition(){
 	drive_goto(offsetValHoriz,offsetValHoriz);
 	//drive_goto(51,0); //90 degrees right not zero radius.
 	drive_goto(26,-25);
-	drive_goto(offsetValVert,offsetValVert); //30 ticks down
+	drive_goto(offsetValVert,offsetValVert); 
 	drive_goto(-26,25);	
 	showTicks(0);
 }
 
 int main(int argc, const char* argv[]){	
 
-	//simulator_showRobotConfiguration();
+	//Convert meters to ticks which is 307.68 around 308.
 	int ticksToMove = round(metersToTicks(1));
-	//print("%d",ticksToMove);
 	
 	initialStartPosition();
-/*
-	#ifdef BUILDING_IN_SIMULATOR
-		simulator_startNewSmokeTrail();
-	#endif
-
-	for (int i = 0; i < 4; ++i){
-	//drive_speed(1,1);
-	drive_goto(ticksToMove,ticksToMove); //Drive one meter 
-	pause(100);
-
-	#ifdef BUILDING_IN_SIMULATOR
-  	simulator_stopSmokeTrail();
-  	#endif
-  	
-  	pause(100);
-  	drive_goto(-26,25);	
-  	
-  	#ifdef BUILDING_IN_SIMULATOR
-		simulator_startNewSmokeTrail();
-	#endif
-	}
-	*/
-	//drive_goto(-100,-100);
 	
+	//Starting position of ticks
 	showTicks(0);
 	//simulator_startNewSmokeTrail();
 	
@@ -86,7 +66,7 @@ int main(int argc, const char* argv[]){
 	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
 	makeTurnLeftNR();
-	drive_goto(-1,0); //Attempt to eliminate offset of top line.
+	drive_goto(-1,0); //Eliminate offset which exists in the top line.
 	
 	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
@@ -95,10 +75,14 @@ int main(int argc, const char* argv[]){
 	simulator_startNewSmokeTrail();
 	drive_goto(ticksToMove,ticksToMove);
 
+	//Show ticks at end.
 	showTicks(0);
 	//showTicks(abs(offsetVal));
 }
 
+//Make robot do a maneuvre so as to avoid the "semi-circle" problem. Found that the
+//length of red-arrow is 11 ticks hence move forward 11 ticks cover gap, then backwards and turns left 90 degrees. Then adds 9 as the
+//tail of the "smoke pipe" is approximately 9 ticks behind the line. 
 void makeTurnLeftNR()
 {
 	drive_goto(11,11);
