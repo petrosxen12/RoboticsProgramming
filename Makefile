@@ -126,6 +126,21 @@ Letters/fast:
 .PHONY : Letters/fast
 
 # Convenience name for target.
+applications/Task1/CMakeFiles/Circle.dir/rule:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f CMakeFiles/Makefile2 applications/Task1/CMakeFiles/Circle.dir/rule
+.PHONY : applications/Task1/CMakeFiles/Circle.dir/rule
+
+# Convenience name for target.
+Circle: applications/Task1/CMakeFiles/Circle.dir/rule
+
+.PHONY : Circle
+
+# fast build rule for target.
+Circle/fast:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Circle.dir/build.make applications/Task1/CMakeFiles/Circle.dir/build
+.PHONY : Circle/fast
+
+# Convenience name for target.
 applications/Task1/CMakeFiles/Testing.dir/rule:
 	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f CMakeFiles/Makefile2 applications/Task1/CMakeFiles/Testing.dir/rule
 .PHONY : applications/Task1/CMakeFiles/Testing.dir/rule
@@ -139,6 +154,33 @@ Testing: applications/Task1/CMakeFiles/Testing.dir/rule
 Testing/fast:
 	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Testing.dir/build.make applications/Task1/CMakeFiles/Testing.dir/build
 .PHONY : Testing/fast
+
+circle.o: circle.c.o
+
+.PHONY : circle.o
+
+# target to build an object file
+circle.c.o:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Circle.dir/build.make applications/Task1/CMakeFiles/Circle.dir/circle.c.o
+.PHONY : circle.c.o
+
+circle.i: circle.c.i
+
+.PHONY : circle.i
+
+# target to preprocess a source file
+circle.c.i:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Circle.dir/build.make applications/Task1/CMakeFiles/Circle.dir/circle.c.i
+.PHONY : circle.c.i
+
+circle.s: circle.c.s
+
+.PHONY : circle.s
+
+# target to generate assembly for a file
+circle.c.s:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Circle.dir/build.make applications/Task1/CMakeFiles/Circle.dir/circle.c.s
+.PHONY : circle.c.s
 
 letters.o: letters.c.o
 
@@ -203,7 +245,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Letters"
+	@echo "... Circle"
 	@echo "... Testing"
+	@echo "... circle.o"
+	@echo "... circle.i"
+	@echo "... circle.s"
 	@echo "... letters.o"
 	@echo "... letters.i"
 	@echo "... letters.s"
