@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+applications/Task1/CMakeFiles/Letters.dir/rule:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f CMakeFiles/Makefile2 applications/Task1/CMakeFiles/Letters.dir/rule
+.PHONY : applications/Task1/CMakeFiles/Letters.dir/rule
+
+# Convenience name for target.
+Letters: applications/Task1/CMakeFiles/Letters.dir/rule
+
+.PHONY : Letters
+
+# fast build rule for target.
+Letters/fast:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Letters.dir/build.make applications/Task1/CMakeFiles/Letters.dir/build
+.PHONY : Letters/fast
+
+# Convenience name for target.
 applications/Task1/CMakeFiles/Testing.dir/rule:
 	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f CMakeFiles/Makefile2 applications/Task1/CMakeFiles/Testing.dir/rule
 .PHONY : applications/Task1/CMakeFiles/Testing.dir/rule
@@ -124,6 +139,33 @@ Testing: applications/Task1/CMakeFiles/Testing.dir/rule
 Testing/fast:
 	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Testing.dir/build.make applications/Task1/CMakeFiles/Testing.dir/build
 .PHONY : Testing/fast
+
+letters.o: letters.c.o
+
+.PHONY : letters.o
+
+# target to build an object file
+letters.c.o:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Letters.dir/build.make applications/Task1/CMakeFiles/Letters.dir/letters.c.o
+.PHONY : letters.c.o
+
+letters.i: letters.c.i
+
+.PHONY : letters.i
+
+# target to preprocess a source file
+letters.c.i:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Letters.dir/build.make applications/Task1/CMakeFiles/Letters.dir/letters.c.i
+.PHONY : letters.c.i
+
+letters.s: letters.c.s
+
+.PHONY : letters.s
+
+# target to generate assembly for a file
+letters.c.s:
+	cd "/Users/petrosxen/Documents/UCL lectures/COMP105P/Simulator_Release_180107/Client" && $(MAKE) -f applications/Task1/CMakeFiles/Letters.dir/build.make applications/Task1/CMakeFiles/Letters.dir/letters.c.s
+.PHONY : letters.c.s
 
 testing.o: testing.c.o
 
@@ -160,7 +202,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... Letters"
 	@echo "... Testing"
+	@echo "... letters.o"
+	@echo "... letters.i"
+	@echo "... letters.s"
 	@echo "... testing.o"
 	@echo "... testing.i"
 	@echo "... testing.s"

@@ -35,7 +35,6 @@ void initialStartPosition(){
 	int offsetValHoriz = -180;
 	int offsetValVert = 120;
 
-	//drive_speed(3,3);
 	drive_goto(offsetValHoriz,offsetValHoriz);
 	//drive_goto(51,0); //90 degrees right not zero radius.
 	drive_goto(26,-25);
@@ -101,12 +100,12 @@ int main(int argc, const char* argv[]){
 }
 
 void makeTurnLeftNR()
-	{
-		drive_goto(11,11);
-		drive_goto(-11,-11);
-		
-		simulator_stopSmokeTrail();
+{
+	drive_goto(11,11);
+	drive_goto(-11,-11);
 	
-		drive_goto(-26,25);
-		drive_goto(9,9);
-	}
+	simulator_stopSmokeTrail();
+
+	drive_goto(-26,25);
+	drive_goto(9,9);
+}
