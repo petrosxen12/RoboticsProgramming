@@ -18,7 +18,7 @@ void bubble(){
   }
   for (int index = 0;index < numOfElement-1;index++){
     for (int j = 0;j < numOfElement-1;j++){
-      if(a[j] >= a[j+1]){
+      if(a[j] > a[j+1]){
         swap(&a[j],&a[j+1]);
       }
     }
