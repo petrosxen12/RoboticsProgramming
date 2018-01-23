@@ -11,7 +11,7 @@ void bubble(){
   int numOfElement;
   printf("Pls enter the number of element u want to sort");
   scanf("%d", &numOfElement);
-  int a[numOfElement-1];
+  int a[numOfElement];
   printf("Pls enter the elements u want to sort\n");
   for(int k = 0;k < numOfElement;k++){
     scanf("%d",&a[k]);
@@ -22,9 +22,10 @@ void bubble(){
         swap(&a[j],&a[j+1]);
       }
     }
-  }
-  for (int i = 0;i < numOfElement;i++){
-    printf("%d ",a[i]);
+    for (int i = 0;i < numOfElement;i++){
+      printf("%d ",a[i]);
+    }
+    printf("\n");
   }
 
 }
