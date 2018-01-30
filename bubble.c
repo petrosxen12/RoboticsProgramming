@@ -1,5 +1,20 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
+#ifdef _WIN32
+//add definition of struct timeval in Windows
+#include <winsock.h>
+#endif
+
+#include "abdrive.h"
+#include "simpletext.h"
+#include "simpletools.h"
+#include "ping.h"
+
+#ifdef BUILDING_IN_SIMULATOR
+#include "simulator.h"
+#endif
 
 void swap(int *a ,int *b){
   int temp = 0;
@@ -9,10 +24,10 @@ void swap(int *a ,int *b){
 }
 void bubble(){
   int numOfElement;
-  printf("Pls enter the number of element u want to sort");
+  print("Pls enter the number of element u want to sort");
   scanf("%d", &numOfElement);
   int a[numOfElement];
-  printf("Pls enter the elements u want to sort\n");
+  print("Pls enter the elements u want to sort\n");
   for(int k = 0;k < numOfElement;k++){
     scanf("%d",&a[k]);
   }
@@ -23,9 +38,9 @@ void bubble(){
       }
     }
     for (int i = 0;i < numOfElement;i++){
-      printf("%d ",a[i]);
+      print("%d ",a[i]);
     }
-    printf("\n");
+    print("\n");
   }
 
 }
