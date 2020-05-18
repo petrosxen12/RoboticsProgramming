@@ -1,2 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 DECLARE_APP(Testing testing.c)
+DECLARE_APP(Letters letters.c)
+DECLARE_APP(Circle circle.c)
+DECLARE_APP(Square square.c)
+DECLARE_APP(bubble bubble.c)
